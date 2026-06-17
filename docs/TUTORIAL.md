@@ -56,7 +56,7 @@ Read the [Microsoft Research article](https://www.microsoft.com/en-us/research/a
 
 ```bash
 git clone https://github.com/IdoG999/Webwright.git
-cd WebWright
+cd Webwright
 ```
 
 ### Step 2.2 — Run the setup script
@@ -71,7 +71,7 @@ This installs the upstream `webwright` package from GitHub and Playwright's Fire
 
 ### Step 2.3 — Open in Cursor
 
-1. **File → Open Folder** → select `WebWright`
+1. **File → Open Folder** → select `Webwright`
 2. Confirm `.cursor/skills/webwright/SKILL.md` exists
 3. Open **Agent** chat (not Ask mode — Agent can run shell commands)
 

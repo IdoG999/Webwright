@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-echo "==> WebWright setup"
+echo "==> Webwright setup"
 echo "    Project: $ROOT"
 
 if ! command -v python3 &>/dev/null; then

@@ -1,6 +1,6 @@
 # LinkedIn Showcase — Webwright in Cursor
 
-Use these drafts to post about your WebWright learning project. Pick one tone, customize the bracketed parts, and add a screenshot of your `outputs/` folder or a `final_script.py` run.
+Use these drafts to post about your Webwright learning project. Pick one tone, customize the bracketed parts, and add a screenshot of your `outputs/` folder or a `final_script.py` run.
 
 ---
 
@@ -73,7 +73,7 @@ If you want a multi-slide LinkedIn document or carousel, use this structure:
 | 2 | The insight | Separate agent from browser; workspace persists, browser is disposable |
 | 3 | How it works | Plan → Explore → Script → Execute → Self-verify |
 | 4 | Results | 86.7% Mind2Web · 60.8% Odysseys · reusable CLI tools |
-| 5 | My setup | WebWright repo + Cursor `@webwright` skill |
+| 5 | My setup | Webwright repo + Cursor `@webwright` skill |
 | 6 | Try it | Clone repo → `./scripts/setup.sh` → `@webwright` in Cursor |
 | 7 | CTA | Star microsoft/Webwright · fork my tutorial repo |
 
@@ -93,7 +93,7 @@ Best engagement comes from real artifacts:
 
 ## Profile / featured section
 
-**Featured link title:** WebWright — Learn Webwright in Cursor  
+**Featured link title:** Webwright — Learn terminal-native web agents in Cursor  
 **URL:** https://github.com/IdoG999/Webwright  
 **Description:** Hands-on tutorial for Microsoft's terminal-native web agent framework, adapted for Cursor Agent chat.
 

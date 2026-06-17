@@ -1,4 +1,4 @@
-# WebWright
+# Webwright
 
 **Learn [Microsoft Webwright](https://github.com/microsoft/Webwright) in Cursor** — terminal-native web agents that turn browsing into reusable Python scripts.
 
@@ -92,7 +92,7 @@ python -m webwright.run.cli \
 ## Project layout
 
 ```
-WebWright/
+Webwright/
 ├── .cursor/skills/webwright/   # Cursor skill (adapted from microsoft/Webwright)
 ├── docs/
 │   ├── TUTORIAL.md             # Full hands-on tutorial
