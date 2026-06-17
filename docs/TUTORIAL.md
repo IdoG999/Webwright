@@ -55,7 +55,7 @@ Read the [Microsoft Research article](https://www.microsoft.com/en-us/research/a
 ### Step 2.1 — Clone and enter the project
 
 ```bash
-git clone https://github.com/IdoG999/WebWright.git
+git clone https://github.com/IdoG999/Webwright.git
 cd WebWright
 ```
 

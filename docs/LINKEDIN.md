@@ -18,7 +18,7 @@ The durable artifact isn't a chat transcript. It's `final_script.py` — reusabl
 
 **What I built**
 → Cursor-adapted Webwright skill (`@webwright` in Agent chat)  
-→ Hands-on tutorial repo: github.com/IdoG999/WebWright  
+→ Hands-on tutorial repo: github.com/IdoG999/Webwright  
 → First live-web runs with screenshot evidence in `outputs/`
 
 **Why it matters**
@@ -31,7 +31,7 @@ The research line that stuck with me: *"A terminal is all you need for web agent
 **Links**
 🔬 Microsoft Research: https://www.microsoft.com/en-us/research/articles/webwright-a-terminal-is-all-you-need-for-web-agents/  
 📦 Upstream project: https://github.com/microsoft/Webwright  
-📘 My learning repo: https://github.com/IdoG999/WebWright
+📘 My learning repo: https://github.com/IdoG999/Webwright
 
 **Hashtags**
 #WebAgents #Playwright #Cursor #AIEngineering #Automation #MicrosoftResearch #Python #RPA #LLM
@@ -51,7 +51,7 @@ Microsoft's **Webwright** treats code as the action space:
 
 I adapted it for **Cursor** — invoke `@webwright` in Agent chat, no extra API key for skill mode.
 
-Repo with tutorial: github.com/IdoG999/WebWright
+Repo with tutorial: github.com/IdoG999/Webwright
 
 Benchmarks (GPT-5.4, 100-step budget):
 • Online-Mind2Web: 86.7%
@@ -94,7 +94,7 @@ Best engagement comes from real artifacts:
 ## Profile / featured section
 
 **Featured link title:** WebWright — Learn Webwright in Cursor  
-**URL:** https://github.com/IdoG999/WebWright  
+**URL:** https://github.com/IdoG999/Webwright  
 **Description:** Hands-on tutorial for Microsoft's terminal-native web agent framework, adapted for Cursor Agent chat.
 
 ---
