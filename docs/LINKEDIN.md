@@ -105,7 +105,7 @@ Best engagement comes from real artifacts:
 Playwright MCP is great for IDE-integrated browser inspection. Webwright is a full task loop: plan, script, verify, and ship a reusable `final_script.py`. Complementary, not competing.
 
 **"Do I need OpenAI API keys?"**  
-Not for Cursor skill mode — Cursor's agent drives the loop. API keys are only for the upstream Python harness (`python -m webwright.run.cli`).
+Not for Cursor skill mode — Cursor's agent drives the loop. API keys are only for the upstream Python harness (`webwright main ...`).
 
 **"Is this your framework?"**  
 No — Webwright is by Microsoft Research + HKU. My repo adds Cursor integration and a learning tutorial on top of the MIT-licensed upstream project.

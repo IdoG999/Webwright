@@ -65,9 +65,14 @@ cd Webwright
 chmod +x scripts/setup.sh
 ./scripts/setup.sh
 source .venv/bin/activate
+webwright doctor
 ```
 
-This installs the upstream `webwright` package from GitHub and Playwright's Firefox browser.
+| Command | What it does |
+|---|---|
+| `./scripts/setup.sh` | Creates `.venv`, installs Webwright + Firefox, creates `outputs/` |
+| `source .venv/bin/activate` | Activates Python env (repeat in every new terminal) |
+| `webwright doctor` | Validates Python, Playwright, browser, and API key |
 
 ### Step 2.3 — Open in Cursor
 
@@ -190,50 +195,85 @@ See `.cursor/skills/webwright/reference/playwright_patterns.md` for code templat
 
 ---
 
-## 5. Harness mode (Python CLI)
+## 5. Harness mode (Python CLI) — terminal
 
-**Goal:** Run the official agent loop with an external model backend.
+**Goal:** Run the official Webwright agent loop from your terminal.
+
+This is the **canonical** way to run Webwright. The loop lives in your terminal: the model emits bash commands, they execute, and output is fed back until the task completes.
 
 ### When to use harness mode
 
-- Reproducing Microsoft benchmark settings
+- Running Webwright the way Microsoft designed it
+- Reproducing benchmark settings
 - Generating `trajectory.json` / `raw_responses.jsonl` for analysis
 - Running tasks without Cursor open
 
-### Step 5.1 — Set your API key
+### Step 5.1 — Activate environment and set API key
 
 ```bash
+cd /path/to/Webwright
 source .venv/bin/activate
 export OPENAI_API_KEY=sk-...
 ```
 
-### Step 5.2 — Run
+| Command | What it does |
+|---|---|
+| `source .venv/bin/activate` | Loads the Python env with Webwright installed |
+| `export OPENAI_API_KEY=...` | API key for OpenAI backend (or `ANTHROPIC_API_KEY` with `model_claude.yaml`) |
+
+### Step 5.2 — Verify setup
 
 ```bash
-python -m webwright.run.cli \
-  -c base.yaml -c model_openai.yaml \
+webwright doctor
+```
+
+Fix any FAIL checks before continuing.
+
+### Step 5.3 — Run
+
+```bash
+webwright main \
   -t "Search for flights from SEA to JFK departing 2026-08-15 returning 2026-08-20" \
   --start-url https://www.google.com/flights \
   --task-id harness_demo \
+  -c base.yaml \
+  -c model_openai.yaml \
   -o outputs/default
 ```
 
-### Step 5.3 — Inspect outputs
+| Flag | What it does |
+|---|---|
+| `main` | Starts the agent loop (required subcommand) |
+| `-t` | Task description |
+| `--start-url` | First page to open |
+| `--task-id` | Output folder label |
+| `-c base.yaml` | Base workspace + bash-loop config |
+| `-c model_openai.yaml` | OpenAI model backend |
+| `-o outputs/default` | Root output directory |
+
+Equivalent: `python -m webwright.run.cli main ...`
+
+### Step 5.4 — Inspect outputs
 
 ```bash
-ls outputs/default/harness_demo/
+ls outputs/default/
+ls outputs/default/harness_demo_*/
+cat outputs/default/harness_demo_*/final_runs/run_1/final_script_log.txt
+python outputs/default/harness_demo_*/final_runs/run_1/final_script.py
 ```
 
 Look for `trajectory.json`, debug screenshots, and the agent's step history.
 
 ### Harness vs Cursor skill
 
-| | Cursor skill | Python harness |
+| | Terminal harness | Cursor skill |
 |---|---|---|
-| Model | Cursor's agent | OpenAI / Anthropic via config |
-| Cost | Cursor subscription | Per-token API billing |
-| Visual QA | Agent reads PNGs | `image_qa` + `self_reflection` tools |
-| Best for | Learning & daily use | Benchmarks & batch eval |
+| Where you type | Terminal | Cursor Agent chat |
+| Who runs shell commands | Webwright loop | Cursor Agent |
+| Model | OpenAI / Anthropic via config | Cursor's agent |
+| Cost | Per-token API billing | Cursor subscription |
+| Visual QA | `image_qa` + `self_reflection` tools | Agent reads PNGs |
+| Best for | Official loop, benchmarks | Learning without extra API key |
 
 ---
 
