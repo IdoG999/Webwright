@@ -1,0 +1,2 @@
+# Microsoft Webwright — install from upstream
+webwright @ git+https://github.com/microsoft/Webwright.git
